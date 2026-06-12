@@ -14,6 +14,7 @@
 셋째 문단입니다.\
 저도
 문장이 두 개입니다.
+
 ---
 ### 스타일
 **굵게(Bold)**
@@ -22,6 +23,7 @@ __굵게(Bold)__
 _이탤릭(italic,기울어진 글자)_
 ~~취소선~~
 > 인용구
+>> 인용구
 
 ---
 ### 목록
@@ -47,6 +49,7 @@ print("Hello python!")
 ---
 ### 링크와 이미지
 링크: [Markdown 공식 문서](https://www.markdownguide.org)
+![세피로트](https://cdn.namu.wiki/r/http%3A%2F%2Fi.imgur.com%2F2megHz2.png "툴팁 메시지. 이 부분은 생략해도 됩니다.")
 이미지: ![파이썬 로고](https://www.python.org/static/img/python-logo.png)
 
 ### 표

@@ -12,6 +12,7 @@ __굵게(Bold)__
 _이탤릭(italic,기울어진 글자)_
 ~~취소선~~
 > 인용구
+i need to highlight these ==very importanat word==
 ---
 
 ### 목록
@@ -49,4 +50,9 @@ print("Hello python!")
 - [o] 웹 사이트 수정
 - [ ] 언론에 문의하세요
 
+### 이모지와 특수문자
+### 이모지 
+`윈`+`.`: 😁
+### 특수문자
+`한글의 자음`+`한자키`: ♥, ※, ⓒ, &copy;
 

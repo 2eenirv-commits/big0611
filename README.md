@@ -12,9 +12,9 @@ __굵게(Bold)__
 _이탤릭(italic,기울어진 글자)_
 ~~취소선~~
 > 인용구
-i need to highlight these ==very importanat word==
+ H~2~O
+ X^2^
 ---
-
 ### 목록
 #### 순서있는 목록
 1. 대한민국

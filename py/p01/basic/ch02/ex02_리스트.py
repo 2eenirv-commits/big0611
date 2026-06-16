@@ -8,6 +8,7 @@ fruit3 = '오렌지'
 # 컨테이너 자료형
 # : 리스트, 튜플, 세트, 딕셔너리
 # 효율적인 방법
+
 fruits = ['사과', '바나나', '오렌지']
 print(fruits)
 
@@ -20,4 +21,3 @@ print(fruits[0])
 print(fruits[-1])
 # 슬라이싱
 print(fruits[1:3])
-

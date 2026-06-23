@@ -49,3 +49,18 @@ with open('일기.txt', 'a', encoding='utf-8') as f:
 
 with open('일기.txt', 'r', encoding='utf-8') as f:
     print(f.read())
+
+
+# 파일 삭제
+# 내부 모듈 가져오기
+
+# shift+enter(한줄씩 실행 리플형식으로 실행>>>)
+import os
+
+fileName = "abc1.txt"
+# 만약에 ~fileName이 존재하면, true, 아니면 false
+if os.path.exists(fileName):
+    os.remove(fileName)
+    print("{}파일을 삭제했습니다.".format(fileName))
+else:
+    print("{}파일이 존재하지 않습니다.".format(fileName))    

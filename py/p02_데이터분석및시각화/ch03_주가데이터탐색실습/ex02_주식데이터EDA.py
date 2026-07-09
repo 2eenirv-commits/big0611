@@ -93,13 +93,53 @@ print(df[['Open', 'Close', 'Daily_Change']].head())
 
 # 일일 변동률
 # Q13. 'Change_Rate' 컬럼을 생성하고, 일일 변동률((종가-시가)/시가*100)을 계산하세요.
-df['Change_Rate'] =  ((df['Close'] - df['Open']) / df['open'] * 100).round(2)
-print(df[['Open', 'Close', 'Daily_Change']].head())
-
-
+df['Change_Rate'] = ((df['Close'] - df['Open']) / df['Open'] * 100).round(2)
+print(df[['Open', 'Close', 'Change_Rate']].head())
 
 
 # Q14. 날짜에서 연도, 월, 요일을 추출하여 각각 'Year', 'Month', 'Weekday' 컬럼을 생성하세요.
+df['Year'] = df.index.year
+df['Month'] = df.index.month
+df['Weekday'] = df.index.day_name()
+print(df[['Year', 'Month', 'Weekday']].head())
+
 # Q15. 월별로 그룹화하여 평균 종가와 총 거래량을 계산하세요.
+monthly_stats = df.groupby('Month').agg({
+    'Close': 'mean',
+    'Volume': 'sum'
+}).round(0)
+print(monthly_stats)
+
 # Q16. 연도별로 그룹화하여 최고가와 최저가를 구하세요.
+yearly_stats = df.groupby('Year').agg({
+    'High': 'max',
+    'Low': 'min'
+})
+print(yearly_stats)
+
 # Q17. 연속해서 상승한 날이 가장 많았던 기간과 일수를 찾으세요.
+# # 전일보다 상승했는지 확인
+# df["Price_Up"] = df["Close"] > df["Close"].shift(1)
+
+# # 연속 상승일 계산
+# df["Consecutive_Up"] = 0
+
+# for i in range(1, len(df)):
+#     if df.loc[df.index[i], "Price_Up"]:
+#         df.loc[df.index[i], "Consecutive_Up"] = df.loc[df.index[i-1], "Consecutive_Up"] + 1
+
+# # 최대 연속 상승일
+# max_consecutive = df["Consecutive_Up"].max()
+
+# # 최대 연속 상승 구간
+# end_date = df[df["Consecutive_Up"] == max_consecutive].index[0]
+# start_date = df.index[df.index.get_loc(end_date) - max_consecutive + 1]
+
+# print(f"최대 연속 상승일: {max_consecutive}일")
+# print(f"기간: {start_date.date()} ~ {end_date.date()}")
+
+df['Price_Up'] = (df['close'] > df['open']).astype(int)
+df['Consecutive_Up'] = df['Price_Up'].groupby((df['Price_Up'] != df['Price_Up'].shift()).cumsum()).cumsum()
+max_consecutive = df['Consecutive_Up'].max()
+print(f'최대 연속 상승일: {max_consecutive}일')
+

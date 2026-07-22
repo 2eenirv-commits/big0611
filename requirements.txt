@@ -6,8 +6,10 @@ matplotlib
 plotly
 nbformat
 streamlit
+streamlit_autorefresh
 requests
 beautifulsoup4
 selenium
 scikit-learn
 tensorflow
+jupytext

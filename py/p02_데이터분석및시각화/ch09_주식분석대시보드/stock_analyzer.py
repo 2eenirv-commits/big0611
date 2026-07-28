@@ -7,7 +7,7 @@ import numpy as np
 # streamlit 페이지 설정
 st.set_page_config(
     page_title='주식 분석기',
-    page_icon='📈',
+    page_icon='📈', 
     layout='wide'
 )
 

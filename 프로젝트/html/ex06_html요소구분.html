@@ -53,9 +53,11 @@
 
      <!-- 목록 
         1. ul 또는 ol은 하나 이상의 li를 써야한다. 
+        2. ul 태그 자식 요소는 li만 사용한다.
      -->
     <!-- ul은 순서 없는 목록 -->
      <ul>
+        <h3></h3>
         <li>아이템1</li>
         <li>아이템2</li>
      </ul>
@@ -69,38 +71,50 @@
         <dd>웹 페이지의 뼈대를 구성하는 마크업 언어입니다.</dd>
      </dl>
 
-     <!-- 테이블 -->
-     <table>
+       <!-- 테이블: table, tr, td, th, caption, col, colgroup, thead, tbody, tfoot -->
+    <table>
         <caption>표의 제목</caption>
         <colgroup>
             <col>
             <col>
         </colgroup>
         <thead>
-        <tr>
-            <th>컬럼명</th>
-            <td>컬럼값</td>
-        </tr>
+            <tr>
+                <th>컬럼명</th>
+                <td>값</td>
+            </tr>
         </thead>
         <tbody>
-            <th>컬럼명</th>
-            <td>값</td>
+            <tr>
+                <th>컬럼명</th>
+                <td>값</td>
+            </tr>
         </tbody>
         <tfoot>
-            <th>컬럼명</th>
-            <td>값</td>
+            <tr>
+                <th>컬럼명</th>
+                <td>값</td>
+            </tr>
         </tfoot>
-     </table>
+    </table>
      
      <!-- 
-        시멘틱 
-             main: 본문 핵심 영역
-                - 페이지에 1번만 사용!
-                - 내비게이션바, 사이드바, 푸터처럼 여러 페이지에 공통으로 
-                  반복 등장하는 요소는 넣으면 안된다!
-             header: 소개 및 탐색 영역
-             footer: 바닥글 영역
-             address: 연락처 정보
+         시멘틱 
+            main
+                - 문서의 핵심 콘텐츠
+                - 페이지마다 보통 하나만 사용
+                - <header>, <footer>, <nav>처럼 반복되는 영역은 포함하지 않음
+            header
+                - 페이지나 특정 영역의 머리말입니다.
+                - 로고, 제목, 메뉴, 검색창
+                - <article> 안에도 사용할 수 있습니다.
+            footer
+                - 문서나 특정 영역의 바닥글입니다.
+                - 저작권, 연락처, 관련 링크, 작성자/소유자 정보
+            address
+                - 문서나 가장 가까운 <article>의 작성자 또는 소유자의 연락처 정보를 나타냅니다.
+                - 이메일, 전화번호, 회사 주소, 웹사이트
+                - <address>는 일반적인 위치 주소를 표시하는 용도는 아닙니다.
      -->
      <main>
         <h1>스프링 부트 배포 가이드</h1>

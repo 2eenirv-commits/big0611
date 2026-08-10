@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox(플렉스 박스)</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
+     <style>
+        :root {font-size: 10px;}
+        body * {outline: 5px dashed rgb(247, 53, 4);}
+        div {height: 300px;}
+        div > div {width: 200px; height: 200px; flex-grow: 1;}
+     </style>
+</head>
+<body>
+    <!-- 
+        선택자 {속성: 값;}
+        .d-flex {dispaly:flex;}
+
+        <table>태그로 레이아웃 구조는 옜날 방식(비표준)(2차원)
+        floating Layout(사용하지x) -> flexbox Layout(1차원) -> grid Layout(2차원)
+         position: static|relative|absolute|fixed|sticky;
+
+        박스 모델 속성
+            1. display: block|inline|inline-block|none;
+            2. width
+            3. 
+
+
+        부모
+            dispaly:flex;
+                1. flex-direction: 배치 방향
+                     row(기본값)|column|row-revers|column-reverse;
+                2. flex-wrap
+                     wrap|nowrap(기본값)|wrap-reverse;
+                3. flex-flow: 배치방향 줄바꿈; (속기형)
+                     row nowrap (기본값)
+
+                4. justify-content: 주축 정렬
+                     flex-start|flex-end|center|space-between|space-around|space-evenly;
+                5. align-items: 교차축 정렬
+                     flex-start|flex-end|center|baseline|stretch(기본값)
+                6. align-content: 교차축 정렬
+                     flex-wrap:wrap;이 적용되어 2줄 이상이 되어야 효과가 있다.
+                     flex-start|flex-end|center|space-between|space-around|stretch(기본값);
+        자식
+            1. align-self: 교차축 정렬
+                 flex-start|flex-end|center|baseline|stretch|auto(기본값)
+            2. flex-grow:
+                 - 0: 성장x -> 기본값
+                 - 1: 성장
+            3. flex-shrink: 수축
+                 -1: 수축 -> 기본값
+                  0: 수축x
+            4. flex-basis
+            5. flex: 성장 수축 크기;(속기형)
+
+            6. order
+
+    -->
+    <!--  flex-direction: row;(기본값) 이면 주축이 가로, 교차축은 세로 -->
+    <!--  flex-direction: column; 이면 주축이 세로, 교차축은 가로 -->
+    <!-- 
+      <div class="d-flex flex-column align-items-baseline">  ->부모값 baseline
+            <div class="align-self-center">11</div>
+            <div class="align-self-end">22</div>
+            <div class="align-self-stretch">33</div>
+            <div class="align-self-auto">44</div>   -> auto, 지정안하면 모두 부모 기본값으로 지정
+            <div>55</div>
+     </div> 
+    -->
+
+    <div class="d-flex">
+        <div>1</div>
+        <div>2</div>
+    </div>
+
+
+
+    
+</body>
+</html>

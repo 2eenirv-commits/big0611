@@ -74,12 +74,21 @@ def crawl_stock_data():
     # 46.71
 
 
+<<<<<<< HEAD
     # 6. 1Y 수익률
     rel_return1 = soup.find_all('span', {'class':'tcr'})
     rel_return2 = rel_return1[2].text.replace('+','')
     rel_return = float(rel_return2)
     print(rel_return)
     # 283.38
+=======
+    # 6. 상대 수익률
+    rel_return1 = soup.find_all('span', {'class':'tcr'})
+    rel_return2 = rel_return1[2].text.replace('+', '')
+    rel_return = float(rel_return2)
+    print(rel_return)
+    # +283.38
+>>>>>>> dd8794ccff6acd577f6775b38a89f8a73956874c
 
 
     # 상단 테이블 웹 크롤링
@@ -103,7 +112,11 @@ def crawl_stock_data():
     raw_text = up_list.find_all('li')[5].text.strip()
 
     if raw_text and raw_text != '-':
+<<<<<<< HEAD
         per_ind = float(up_list.find_all('li')[5].text)
+=======
+        per_ind = float(raw_text)
+>>>>>>> dd8794ccff6acd577f6775b38a89f8a73956874c
     else:
         per_ind = 0.0
 
@@ -204,8 +217,15 @@ def crawl_stock_data():
         mk_cpt_cm
     ]
 
+<<<<<<< HEAD
     # print(res)
     # print(len(res))
     print('크롤링 완료! 결과를 res에 담았습니다.')
 
     return res
+=======
+    print(res)
+    print(len(res))
+
+    return res
+>>>>>>> dd8794ccff6acd577f6775b38a89f8a73956874c
